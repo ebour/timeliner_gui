@@ -8,6 +8,14 @@ function LayerView(context, channelName) {
 	var label = document.createElement('span');
 	
 	label.style.cssText = 'font-size: 12px; padding: 4px;';
+	
+	label.addEventListener('click', function(e) {
+		context.dispatcher.fire('label', channelName);
+	});
+	
+	label.addEventListener('mouseover', function(e) {
+		context.dispatcher.fire('label', channelName);
+	});
 
 	var height = (LayoutConstants.LINE_HEIGHT - 1);
 
